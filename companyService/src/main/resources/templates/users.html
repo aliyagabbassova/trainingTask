@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+</head>
+<body>
+<h1>Создание заметок </h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Заголовок</th>
+        <th>Содержимое</th>
+        <th>Дата создания</th>
+    </tr>
+    <tr th:each="user: ${users}" >
+
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.idCompany}"></td>
+
+    </tr>
+</table>
+<h2>Введите данные</h2>
+<form action="/users" method="post">
+    ID:   <input type="number" name="id"><br />
+    FirstName:      <input type="text" name="firstName"><br />
+    LastName:      <input type="text" name="lastName"><br />
+    PhoneNumber: <input type="phoneNumber" step="any" name="phoneNumber"><br />
+    ID of company:   <input type="number" name="idCompany"><br />
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

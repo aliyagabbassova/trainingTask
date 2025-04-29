@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: company-service
+  config:
+    import: "configserver:http://localhost:8888"
+  datasource:
+    url: jdbc:postgresql://postgres:5433/company_db
+    username: aliya
+    password: aliya123
+
+server:
+  port: 8082

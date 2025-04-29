@@ -1,0 +1,44 @@
+#spring:
+#  application:
+#    name: UserService
+#  config:
+#    import: "configserver:http://localhost:8888"
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/users
+#    username: aliya
+#    password: aliya123
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#  profiles:
+#    active: dev
+#
+#server:
+#  port: 8081
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/users
+    username: aliya
+    password: aliya123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  profiles:
+    active: dev
+
+
+
+
+
+
+
