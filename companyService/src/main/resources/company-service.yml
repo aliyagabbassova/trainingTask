@@ -2,7 +2,7 @@ spring:
   application:
     name: company-service
   config:
-    import: "configserver:http://localhost:8888"
+    import: optional:configserver:http://localhost:8888  # <== ПРАВИЛЬНЫЙ СИНТАКСИС
   datasource:
     url: jdbc:postgresql://postgres:5433/company_db
     username: aliya
@@ -10,3 +10,6 @@ spring:
 
 server:
   port: 8082
+
+
+

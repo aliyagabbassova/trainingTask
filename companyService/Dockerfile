@@ -4,7 +4,7 @@
 #ENTRYPOINT ["top", "-b"]
 
 # Используем официальный образ Java
-FROM openjdk:21-jdk-slim
+FROM openjdk:19-jdk-slim
 
 # Указываем рабочую директорию внутри контейнера
 WORKDIR /app

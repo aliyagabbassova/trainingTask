@@ -13,20 +13,19 @@ import java.util.List;
 public class CompanyServiceImpl implements CompanyService {
     private final CompanyRepository companyRepository;
 
-
     @Override
-    public Company createUser(Company user) {
-        return companyRepository.save(user);
+    public Company createCompany(Company company) {
+        return companyRepository.save(company);
     }
 
     @Override
-    public Company getUserById(Long id) {
+    public Company getCompanyById(Long id) {
         return companyRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Company updateUser(Long id, Company company) {
-        Company companyById = getUserById(id);
+    public Company updateCompany(Long id, Company company) {
+        Company companyById = getCompanyById(id);
         companyById.setCompanyId(company.getCompanyId());
         companyById.setEmployeeId(company.getEmployeeId());
         companyById.setCompanyName(company.getCompanyName());
@@ -34,20 +33,18 @@ public class CompanyServiceImpl implements CompanyService {
         return companyRepository.save(companyById);
     }
 
-//Уточнить!!!!
     @Override
-    public List<Company> getAllUsers() {
-        return companyRepository.findAll();
+    public List<Company> getAllCompanies() {
+        return List.of();
     }
 
     @Override
-    public Company addUser(Company user) {
-        return companyRepository.save(user);
+    public Company addCompany(Company company) {
+        return null;
     }
 
     @Override
-    public void deleteUser(Long id) {
-        Company userById = getUserById(id);
-        companyRepository.delete(userById);
+    public void deleteCompany(Long id) {
+
     }
 }

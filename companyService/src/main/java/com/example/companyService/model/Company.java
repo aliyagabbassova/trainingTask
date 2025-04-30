@@ -1,5 +1,6 @@
 package com.example.companyService.model;
 
+import com.example.companyService.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,14 +15,15 @@ public class Company {
     private Long CompanyId;
 
     @ElementCollection
-    private List<Long> employeeIds;
+    private List<Long> employeeId;
 
     @Transient
-    private List<User> employees;
+    private List<UserDto> employees;
 
     @Column (nullable = false)
     private String companyName;
 
     @Column (nullable = false)
     private int budget;
+
 }
