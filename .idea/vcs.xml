@@ -2,7 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/configServer" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/configServer/spring-cloud-config-repo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/config-server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/config-server/spring-cloud-config-repo" vcs="Git" />
   </component>
 </project>
