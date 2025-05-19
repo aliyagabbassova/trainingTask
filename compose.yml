@@ -75,7 +75,7 @@ services:
       - POSTGRES_USER=aliya
       - POSTGRES_PASSWORD=aliya123
     ports:
-      - "5433:5433"
+      - "5433:5432"
     networks:
       - my-network
 
