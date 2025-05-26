@@ -7,6 +7,9 @@ services:
       - "8888:8080"
     networks:
       - my-network
+    depends_on:
+      - user-service
+      - company-service
 
   eureka-server:
     build:
@@ -19,6 +22,7 @@ services:
     depends_on:
       - config-server
 
+
   user-service:
     build:
       context: ./user-service
@@ -28,8 +32,8 @@ services:
     networks:
       - my-network
     depends_on:
-      - eureka-server
-      - postgres
+      - postgres-user
+
 
   company-service:
     build:
@@ -40,8 +44,7 @@ services:
     networks:
       - my-network
     depends_on:
-      - user-service
-      - postgres
+      - postgres-company
 
   gateway:
     build:
@@ -55,7 +58,7 @@ services:
       - company-service
 
   postgres-user:
-    image: 'postgres:14'
+    image: 'postgres:latest'
     container_name: postgres-user
     environment:
       - POSTGRES_DB=users
@@ -65,10 +68,11 @@ services:
       - "5432:5432"
     networks:
       - my-network
+    restart: unless-stopped
 
 
   postgres-company:
-    image: 'postgres:14'
+    image: 'postgres:latest'
     container_name: postgres-company
     environment:
       - POSTGRES_DB=company_db
@@ -78,4 +82,9 @@ services:
       - "5433:5432"
     networks:
       - my-network
+    restart: unless-stopped
 
+
+networks:
+  my-network:
+    driver: bridge

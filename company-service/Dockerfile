@@ -13,7 +13,10 @@ WORKDIR /app
 COPY target/company-service-0.0.1-SNAPSHOT.jar app.jar
 
 # Указываем порт, который будет слушать приложение
-EXPOSE 8080
+EXPOSE 8082
 
 # Команда запуска приложения
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "company-service.jar"]
+
+
+

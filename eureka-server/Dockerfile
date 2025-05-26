@@ -1,16 +1,10 @@
-#FROM ubuntu:latest
-#LABEL authors="a.gabbasova"
-#
-#ENTRYPOINT ["top", "-b"]
-
-# Используем официальный образ Java
 FROM openjdk:19-jdk-slim
 
 # Указываем рабочую директорию внутри контейнера
 WORKDIR /app
 
 # Копируем собранный JAR-файл внутрь контейнера
-COPY target/eurekaServer-0.0.1-SNAPSHOT.jar app.jar
+COPY target/eureka-server-0.0.1-SNAPSHOT.jar app.jar
 
 # Указываем порт, который будет слушать приложение
 EXPOSE 8080

@@ -28,5 +28,4 @@ public class Company {
 
     @Column (nullable = false)
     private int budget;
-
 }
