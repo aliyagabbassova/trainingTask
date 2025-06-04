@@ -2,7 +2,6 @@
 #LABEL authors="a.gabbasova"
 #
 #ENTRYPOINT ["top", "-b"]
-
 # Используем официальный образ Java
 FROM openjdk:19-jdk-slim
 
