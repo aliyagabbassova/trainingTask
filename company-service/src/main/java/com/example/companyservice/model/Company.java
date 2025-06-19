@@ -1,9 +1,11 @@
 package com.example.companyservice.model;
 
 import com.example.companyservice.dto.UserDto;
-import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -20,7 +22,7 @@ public class Company {
     @Transient
     private List<UserDto> employees;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String firstName;
 
     @Column (nullable = false)
@@ -28,4 +30,14 @@ public class Company {
 
     @Column (nullable = false)
     private int budget;
+    @javax.persistence.Id
+    private Long id;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

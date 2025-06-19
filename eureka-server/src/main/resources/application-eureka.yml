@@ -4,8 +4,18 @@ server:
 spring:
   application:
     name: eureka-server
+  config:
+    import: optional:configserver:http://config-server:8888
 
 eureka:
   client:
-    register-with-eureka: false  # не регистрировать самого себя
-    fetch-registry: false        # не искать других (он — сервер)
+    register-with-eureka: false
+    fetch-registry: false
+#  instance:
+#    hostname: eureka-server
+#    prefer-ip-address: false
+#    instance-id: eureka-server:${server.port}
+#    metadata-map:
+#      instanceId: ${spring.application.name}:${server.port}
+
+

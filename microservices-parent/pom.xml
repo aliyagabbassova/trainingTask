@@ -13,17 +13,18 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
-        <relativePath/> <!-- не ищем локально -->
+        <version>2.7.14</version>
+        <relativePath/>
     </parent>
 
     <properties>
         <java.version>17</java.version>
-        <spring-cloud.version>2024.0.1</spring-cloud.version> <!-- обновлено для совместимости -->
+        <spring-cloud.version>2021.0.8</spring-cloud.version>
+        <spring-boot.version>3.4.2</spring-boot.version><!-- обновлено для совместимости -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    </properties>
-
+        <lombok.version>1.18.32</lombok.version> <!-- Добавлено -->
+        </properties>
     <dependencyManagement>
         <dependencies>
             <!-- BOM Spring Cloud -->

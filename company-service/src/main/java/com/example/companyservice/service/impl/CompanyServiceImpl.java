@@ -2,11 +2,11 @@ package com.example.companyservice.service.impl;
 import com.example.companyservice.model.Company;
 import com.example.companyservice.repository.CompanyRepository;
 import com.example.companyservice.service.CompanyService;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 

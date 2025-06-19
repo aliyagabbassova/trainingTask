@@ -1,19 +1,5 @@
-#FROM ubuntu:latest
-#LABEL authors="a.gabbasova"
-#
-#ENTRYPOINT ["top", "-b"]
+FROM amazoncorretto:17
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
 
-# Используем официальный образ Java
-FROM openjdk:19-jdk-slim
 
-# Указываем рабочую директорию внутри контейнера
-WORKDIR /app
-
-# Копируем собранный JAR-файл внутрь контейнера
-COPY target/company-service-0.0.1-SNAPSHOT.jar app.jar
-
-# Указываем порт, который будет слушать приложение
-EXPOSE 8082
-
-# Команда запуска приложения
-ENTRYPOINT ["java", "-jar", "app.jar"]
