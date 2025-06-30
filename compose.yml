@@ -7,6 +7,8 @@ services:
       - "8888:8888"
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/aliyagabbassova/spring-cloud-config-repo.git
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
     networks:
       - my-network
     healthcheck:
@@ -27,6 +29,9 @@ services:
       EUREKA_CLIENT_REGISTER_WITH_EUREKA: false
       EUREKA_CLIENT_FETCH_REGISTRY: false
       SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/aliyagabbassova/spring-cloud-config-repo.git
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
+
     depends_on:
       config-server:
         condition: service_healthy
@@ -44,7 +49,7 @@ services:
       context: ./user-service
       dockerfile: Dockerfile
     ports:
-      - "8081:8080"
+      - "8081:8081"
     depends_on:
       postgres-user:
         condition: service_started
@@ -58,6 +63,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: aliya123
       SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/aliyagabbassova/spring-cloud-config-repo.git
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
       SPRING_APPLICATION_NAME: user-service
     networks:
       - my-network
@@ -67,7 +74,7 @@ services:
       context: ./company-service
       dockerfile: Dockerfile
     ports:
-      - "8082:8080"
+      - "8082:8082"
     depends_on:
       postgres-company:
         condition: service_started
@@ -81,6 +88,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: aliya123
       SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/aliyagabbassova/spring-cloud-config-repo.git
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
       SPRING_APPLICATION_NAME: company-service
     networks:
       - my-network
@@ -90,7 +99,7 @@ services:
       context: ./gateway
       dockerfile: Dockerfile
     ports:
-      - "8083:8080"
+      - "8083:8083"
     depends_on:
       config-server:
         condition: service_healthy
@@ -99,6 +108,8 @@ services:
     environment:
       SPRING_CONFIG_IMPORT: optional:configserver:http://config-server:8888
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka/
+      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/aliyagabbassova/spring-cloud-config-repo.git
+      SPRING_CLOUD_CONFIG_SERVER_GIT_DEFAULT_LABEL: main
     networks:
       - my-network
 

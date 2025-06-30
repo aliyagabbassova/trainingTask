@@ -1,0 +1,26 @@
+package com.example.userservice.mapper;
+
+
+import com.example.userservice.model.User;
+import org.example.UserDto;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+public class UserMapper {
+    public UserDto toDto(User user) {
+        UserDto dto = new UserDto();
+        dto.setId(user.getId());
+        dto.setFirstName(user.getFirstName());
+        dto.setLastName(user.getLastName());
+        dto.setPhoneNumber(Integer.parseInt(user.getPhoneNumber()));
+        dto.setIdCompany(user.getIdCompany());
+        return dto;
+    }
+
+    public List<UserDto> toDtoList(List<User> users) {
+        return users.stream().map(this::toDto).collect(Collectors.toList());
+    }
+}

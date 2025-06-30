@@ -1,22 +1,25 @@
 package com.example.companyservice.model;
 
-import com.example.companyservice.dto.UserDto;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
+import org.example.UserDto;
 
 import javax.persistence.*;
 import java.util.List;
 
+import javax.persistence.Transient; // Важно!
+
 @Data
 @Entity
-@Table(name="company_db")
+@Table(name = "company_db")
 public class Company {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long CompanyId;
+    private Long id;
 
     @ElementCollection
+    @CollectionTable(name = "company_employee_ids", joinColumns = @JoinColumn(name = "company_id"))
+    @Column(name = "employee_id")
     private List<Long> employeeId;
 
     @Transient
@@ -25,19 +28,9 @@ public class Company {
     @Column(nullable = false)
     private String firstName;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private String companyName;
 
-    @Column (nullable = false)
+    @Column(nullable = false)
     private int budget;
-    @javax.persistence.Id
-    private Long id;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
