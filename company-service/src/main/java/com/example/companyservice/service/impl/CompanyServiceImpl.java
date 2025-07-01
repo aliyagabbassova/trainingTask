@@ -33,7 +33,6 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company updateCompany(Long id, Company company) {
         Company companyById = getCompanyById(id);
-        companyById.setCompanyId(company.getCompanyId());
         companyById.setEmployeeId(company.getEmployeeId());
         companyById.setCompanyName(company.getCompanyName());
         companyById.setBudget(company.getBudget());

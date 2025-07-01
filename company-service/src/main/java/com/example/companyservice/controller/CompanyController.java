@@ -1,10 +1,10 @@
 package com.example.companyservice.controller;
 
-import com.example.companyservice.dto.UserDto;
-import com.example.companyservice.dto.UserDto;
+
 import com.example.companyservice.model.Company;
 import com.example.companyservice.service.CompanyService;
 import lombok.Data;
+import org.example.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
