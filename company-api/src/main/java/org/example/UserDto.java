@@ -7,6 +7,6 @@ public class UserDto {
     private Long id;
     private String firstName;
     private String lastName;
-    private int phoneNumber;
-    private Long idCompany;
+    private String phoneNumber;
+    private Long companyId;
 }

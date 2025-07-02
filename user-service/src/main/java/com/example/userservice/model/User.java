@@ -23,5 +23,5 @@ public class User {
     private String phoneNumber; // изменено с int на String
 
     @Column(nullable = false)
-    private Long idCompany;
+    private Long companyId;
 }

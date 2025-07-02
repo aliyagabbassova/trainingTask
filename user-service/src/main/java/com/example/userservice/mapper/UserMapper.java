@@ -16,7 +16,7 @@ public class UserMapper {
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
         dto.setPhoneNumber(Integer.parseInt(user.getPhoneNumber()));
-        dto.setIdCompany(user.getIdCompany());
+        dto.setCompanyId(user.getCompanyId());
         return dto;
     }
 
