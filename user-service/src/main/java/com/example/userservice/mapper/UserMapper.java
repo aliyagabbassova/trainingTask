@@ -1,8 +1,9 @@
 package com.example.userservice.mapper;
 
 
+import com.example.userservice.dto.UserDto;
 import com.example.userservice.model.User;
-import org.example.UserDto;
+
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,7 +16,8 @@ public class UserMapper {
         dto.setId(user.getId());
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
-        dto.setPhoneNumber(Integer.parseInt(user.getPhoneNumber()));
+//        dto.setPhoneNumber(String.valueOf(Integer.parseInt(user.getPhoneNumber())));
+        dto.setPhoneNumber(String.valueOf((user.getPhoneNumber())));
         dto.setCompanyId(user.getCompanyId());
         return dto;
     }

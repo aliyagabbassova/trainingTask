@@ -20,8 +20,8 @@ public class User {
     private String lastName;
 
     @Column(nullable = false)
-    private String phoneNumber; // изменено с int на String
+    private Long phoneNumber;
 
-    @Column(nullable = false)
+    @Column(name = "id_company", nullable = false)
     private Long companyId;
 }

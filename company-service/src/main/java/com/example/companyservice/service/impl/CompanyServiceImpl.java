@@ -2,6 +2,9 @@ package com.example.companyservice.service.impl;
 import com.example.companyservice.model.Company;
 import com.example.companyservice.repository.CompanyRepository;
 import com.example.companyservice.service.CompanyService;
+
+
+import com.example.userservice.dto.CompanyDto;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,5 +60,10 @@ public class CompanyServiceImpl implements CompanyService {
         } else {
             throw new EntityNotFoundException("Компания с id " + id + " не найдена");
         }
+    }
+    private Company convertToEntity(CompanyDto dto) {
+        Company company = new Company();
+        company.setCompanyName(dto.getCompanyName());  // ← ОБЯЗАТЕЛЬНО!
+        return company;
     }
 }
